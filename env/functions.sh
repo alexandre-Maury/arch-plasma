@@ -92,7 +92,7 @@ install_with_pac() {
     else
 
         echo "Installation du paquets $package..." | tee -a "$LOG_FILES_INSTALL"
-        if sudo pacman -S --needed --noconfirm $package 2>&1; then
+        if sudo pacman -S --needed --noconfirm --ask=4 $package 2>&1; then
             echo "Installation réussie pour $package..." | tee -a "$LOG_FILES_INSTALL"
         else
             echo "Erreur d'installation pour $package..." | tee -a "$LOG_FILES_INSTALL"
