@@ -86,7 +86,7 @@ install_with_pac() {
     local package="$1"
 
     # Vérifier si le paquet est déjà installé
-    if pacman -Qi $package 2>&1; then
+    if sudo pacman -Qi $package 2>&1; then
         echo "Le paquets $package est déjà installé..." | tee -a "$LOG_FILES_INSTALL"
         return 0
     else
