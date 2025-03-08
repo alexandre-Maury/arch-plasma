@@ -35,8 +35,8 @@ install_aur_yay() {
 ##############################################################################
 install_full_packages() {
 
-    local pkg_utils_pac="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_pac"
-    local pkg_utils_yay="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_yay"
+    local pkg_utils_pac="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_pac.txt"
+    local pkg_utils_yay="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_yay.txt"
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
     echo "=== DEBUT DE L'INSTALLATION DES APPLICATIONS ===" | tee -a "$LOG_FILES_INSTALL"
