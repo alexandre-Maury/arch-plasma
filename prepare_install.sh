@@ -52,3 +52,10 @@ chmod +x "$INSTALL_SCRIPT"
 "$INSTALL_SCRIPT" --install
 
 echo "=== FIN DE L'INSTALLATION - REDÉMARREZ VOTRE SYSTÈME ==="
+
+
+# 1. Thèmes de bureau (Plasma) => ~/.local/share/plasma/desktoptheme/
+# 2. Thèmes d'icônes => ~/.local/share/icons
+# 3. Thèmes de fenêtres et de bordures => ~/.local/share/kdecoration/
+# 4. Thèmes de curseur => ~/.local/share/icons
+# 5. Thèmes de couleurs => ~/.local/share/color-schemes/
