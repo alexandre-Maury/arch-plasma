@@ -45,6 +45,7 @@ install_full_packages() {
     echo "Installation des packages avec pacman..." | tee -a "$LOG_FILES_INSTALL"
     while IFS= read -r line; do
         [[ -z "$line" || "$line" =~ ^# ]] && continue
+        echo "Lancement de la recherche du paquet : $line"
         install_with_pac "$line"
     done < "$pkg_utils_pac"
 
