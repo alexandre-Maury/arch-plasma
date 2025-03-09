@@ -100,5 +100,4 @@ PACKAGES_YAY=(
     "qemu"
     "libvirt"
     "virt-manager"
-    "opensnitch"
 )
