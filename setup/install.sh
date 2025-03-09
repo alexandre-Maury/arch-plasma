@@ -7,6 +7,10 @@ source $TARGET_DIR/arch-plasma/env/functions.sh
 source $TARGET_DIR/arch-plasma/conf/aur.sh
 
 source $TARGET_DIR/arch-plasma/fct-install/install_aur.sh
+source $TARGET_DIR/arch-plasma/fct-install/install_services.sh
+source $TARGET_DIR/arch-plasma/fct-install/install_repo.sh
+source $TARGET_DIR/arch-plasma/fct-install/install_impression.sh
+source $TARGET_DIR/arch-plasma/fct-install/install_secure.sh
 
 
 # Gestion des options
@@ -29,26 +33,15 @@ case "$1" in
     # Exécution des fonctions d'installation
     install_aur_yay
     install_full_packages
+    install_repo_autocpufreq
+    install_repo_ohmyzsh
+    install_repo_asdf
+    install_cups
+    install_firewall
+    install_clam
+    install_vpn
 
-    sudo systemctl enable bluetooth.service
-    sudo systemctl enable sshd.service
-    sudo systemctl enable --now cups.service
-
-    chsh -s /usr/bin/zsh # To set Zsh as the default SHELL
-    chsh -s /usr/bin/nu  # To set NuShell as the default SHELL
-
-    sudo freshclam
-    sudo systemctl enable --now clamav-freshclam.service
-    sudo systemctl enable --now clamav-daemon.service
-
-    sudo cp clamtk-kde.desktop /usr/share/kservices5/ServiceMenus/
-
-    sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-    sudo paccache -rk
-
-    sudo systemctl enable --now cockpit.socket
+    activate_services
 
     read -p "Souhaitez-vous configurer votre compte git ? (Y/n) " git
 

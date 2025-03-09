@@ -15,7 +15,6 @@ PACKAGES_YAY=(
     "iw"
     "bluez"
     "bluez-utils"
-    "blueman"
     "ntfs-3g"
     "plasma"
     "konsole"
@@ -98,4 +97,7 @@ PACKAGES_YAY=(
     "neovim"
     "vim"
     "jdownloader2"
+    "qemu"
+    "libvirt"
+    "virt-manager"
 )
