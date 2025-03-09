@@ -39,15 +39,10 @@ install_full_packages() {
     echo "=== DEBUT DE L'INSTALLATION DES APPLICATIONS ===" | tee -a "$LOG_FILES_INSTALL"
     echo "" | tee -a "$LOG_FILES_INSTALL"
 
-    # Installation des paquets avec pacman
-    for package in "${PACKAGES_PAC[@]}"; do
-        install_with_pac "$package"
-    done
-
     # Installation des paquets avec yay
-    # for package in "${PACKAGES_YAY[@]}"; do
-        # install_with_pac "$package"
-    # done
+    for package in "${PACKAGES_YAY[@]}"; do
+        install_with_yay "$package"
+    done
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
 

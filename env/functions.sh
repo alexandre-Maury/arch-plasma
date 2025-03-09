@@ -63,7 +63,7 @@ install_with_yay() {
     local package="$1"
 
     # Vérifier si le paquet est déjà installé
-    if yay -Qi "$package" > /dev/null 2>&1; then
+    if yay -Qi "$package" 2>&1; then
         echo "Le paquet $package est déjà installé..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         return 0
     else
@@ -85,7 +85,7 @@ install_with_pac() {
     local package="$1"
 
     # Vérifier si le paquet est déjà installé
-    if pacman -Qi "$package" > /dev/null 2>&1; then
+    if pacman -Qi "$package" 2>&1; then
         echo "Le paquet $package est déjà installé..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         return 0
     else
