@@ -4,8 +4,8 @@ set -e  # Quitte immédiatement en cas d'erreur.
 
 source $TARGET_DIR/arch-plasma/env/system.sh 
 source $TARGET_DIR/arch-plasma/env/functions.sh
-source $TARGET_DIR/arch-plasma/conf/pkg_utils_pac.sh
-source $TARGET_DIR/arch-plasma/conf/pkg_utils_yay.sh
+source $TARGET_DIR/arch-plasma/conf/pac.sh
+source $TARGET_DIR/arch-plasma/conf/yay.sh
 
 source $TARGET_DIR/arch-plasma/fct-install/install_aur.sh
 
