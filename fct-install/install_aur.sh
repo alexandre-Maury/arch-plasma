@@ -45,9 +45,9 @@ install_full_packages() {
     done
 
     # Installation des paquets avec yay
-    for package in "${PACKAGES_YAY[@]}"; do
-        install_with_pac "$package"
-    done
+    # for package in "${PACKAGES_YAY[@]}"; do
+        # install_with_pac "$package"
+    # done
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
 
