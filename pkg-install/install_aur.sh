@@ -46,7 +46,7 @@ install_full_packages() {
     while IFS= read -r line; do
         [[ -z "$line" || "$line" =~ ^# ]] && continue
         echo "Lancement de la recherche du paquet : $line"
-        install_with_pac "$line"
+        install_with_yay "$line"
     done < "$pkg_utils_pac"
 
     echo "Installation des packages avec yay..." | tee -a "$LOG_FILES_INSTALL"
