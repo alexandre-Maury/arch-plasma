@@ -76,9 +76,8 @@ activate_services() {
     sudo systemctl enable --now cockpit.socket
     log_status "Activation de cockpit.service"
 
-    chsh -s /usr/bin/zsh # To set Zsh as the default SHELL
     chsh -s /usr/bin/nu  # To set NuShell as the default SHELL
-    #chsh --shell /bin/zsh
+    chsh -s /usr/bin/zsh # To set Zsh as the default SHELL
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
     echo "=== FIN DE L'ACTIVATION DES SERVICES ===" | tee -a "$LOG_FILES_INSTALL"
