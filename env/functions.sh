@@ -63,43 +63,42 @@ install_with_yay() {
     local package="$1"
 
     # Vérifier si le paquet est déjà installé
-    if yay -Qi $package 2>&1; then
-        echo "Le paquets $package est déjà installé..." | tee -a "$LOG_FILES_INSTALL"
+    if yay -Qi "$package" > /dev/null 2>&1; then
+        echo "Le paquet $package est déjà installé..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         return 0
     else
-
-        echo "Installation du paquets $package..." | tee -a "$LOG_FILES_INSTALL"
-        if yay -S --needed --noconfirm --ask=4 $package 2>&1; then
-            echo "Installation réussie pour $package..." | tee -a "$LOG_FILES_INSTALL"
+        echo "Installation du paquet $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
+        if yay -S --needed --noconfirm --ask=4 "$package" 2>&1 | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"; then
+            echo "Installation réussie pour $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         else
-            echo "Erreur d'installation pour $package..." | tee -a "$LOG_FILES_INSTALL"
+            echo "Erreur d'installation pour $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
             return 1
         fi
     fi
 }
+
 
 ##############################################################################
 ## Installation avec pacman                                         
 ##############################################################################
 install_with_pac() {
-
     local package="$1"
 
     # Vérifier si le paquet est déjà installé
-    if sudo pacman -Qi $package 2>&1; then
-        echo "Le paquets $package est déjà installé..." | tee -a "$LOG_FILES_INSTALL"
+    if pacman -Qi "$package" > /dev/null 2>&1; then
+        echo "Le paquet $package est déjà installé..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         return 0
     else
-
-        echo "Installation du paquets $package..." | tee -a "$LOG_FILES_INSTALL"
-        if sudo pacman -S --needed --noconfirm --ask=4 $package 2>&1; then
-            echo "Installation réussie pour $package..." | tee -a "$LOG_FILES_INSTALL"
+        echo "Installation du paquet $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
+        if sudo pacman -S --needed --noconfirm --ask=4 "$package" 2>&1 | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"; then
+            echo "Installation réussie pour $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
         else
-            echo "Erreur d'installation pour $package..." | tee -a "$LOG_FILES_INSTALL"
+            echo "Erreur d'installation pour $package..." | tee -a "${LOG_FILES_INSTALL:-/tmp/install_log.txt}"
             return 1
         fi
     fi
 }
+
 
 ##############################################################################
 ## clean_system - nettoyage de l'installation                                             
