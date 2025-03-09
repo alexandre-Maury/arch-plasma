@@ -35,25 +35,19 @@ install_aur_yay() {
 ##############################################################################
 install_full_packages() {
 
-    local pkg_utils_pac="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_pac.txt"
-    local pkg_utils_yay="$TARGET_DIR/arch-plasma/pkg-files/pkg_utils_yay.txt"
-
     echo "" | tee -a "$LOG_FILES_INSTALL"
     echo "=== DEBUT DE L'INSTALLATION DES APPLICATIONS ===" | tee -a "$LOG_FILES_INSTALL"
     echo "" | tee -a "$LOG_FILES_INSTALL"
 
-    echo "Installation des packages avec pacman..." | tee -a "$LOG_FILES_INSTALL"
-    while IFS= read -r line; do
-        [[ -z "$line" || "$line" =~ ^# ]] && continue
-        echo "Lancement de la recherche du paquet : $line"
-        install_with_yay "$line"
-    done < "$pkg_utils_pac"
+    # Installation des paquets avec pacman
+    for package in "${PACKAGES_PAC[@]}"; do
+        install_with_pac "$package"
+    done
 
-    echo "Installation des packages avec yay..." | tee -a "$LOG_FILES_INSTALL"
-    while IFS= read -r line; do
-        [[ -z "$line" || "$line" =~ ^# ]] && continue
-        install_with_yay "$line"
-    done < "$pkg_utils_yay"
+    # Installation des paquets avec yay
+    for package in "${PACKAGES_YAY[@]}"; do
+        install_with_pac "$package"
+    done
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
 

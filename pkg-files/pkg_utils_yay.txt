@@ -1,3 +1,0 @@
-nushell
-ttf-dejavu
-ttf-meslo-nerd-font-powerlevel10k
