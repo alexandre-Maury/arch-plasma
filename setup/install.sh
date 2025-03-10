@@ -12,6 +12,7 @@ source $TARGET_DIR/arch-plasma/fct-install/install_services.sh
 source $TARGET_DIR/arch-plasma/fct-install/install_repo.sh
 source $TARGET_DIR/arch-plasma/fct-install/install_impression.sh
 source $TARGET_DIR/arch-plasma/fct-install/install_secure.sh
+source $TARGET_DIR/arch-plasma/fct-install/install_dots.sh
 
 
 # Gestion des options
@@ -41,7 +42,7 @@ case "$1" in
     install_firewall
     install_clam
     install_vpn
-
+    install_dotfiles
     activate_services
 
     read -p "Souhaitez-vous configurer votre compte git ? (Y/n) " git
