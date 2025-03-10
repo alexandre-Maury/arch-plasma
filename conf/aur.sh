@@ -3,6 +3,7 @@
 # Liste des paquets à installer
 PACKAGES_YAY=(
     "git"
+    "nano"
     "curl"
     "tar"
     "pacman-contrib"
@@ -13,10 +14,13 @@ PACKAGES_YAY=(
     "wpa_supplicant"
     "iwd"
     "iw"
+    "wireless_tools"
     "bluez"
     "bluez-utils"
     "ntfs-3g"
-    "plasma"
+    "plasma-meta"
+    "plasma-workspace"
+    "smartmontools"
     "konsole"
     "dolphin"
     "ark"
@@ -24,6 +28,7 @@ PACKAGES_YAY=(
     "kcalc"
     "spectacle"
     "krunner"
+    "xdg-utils"
     "partitionmanager"
     "packagekit-qt5"
     "firefox"
@@ -100,4 +105,5 @@ PACKAGES_YAY=(
     "qemu"
     "libvirt"
     "virt-manager"
+    "kate"
 )
