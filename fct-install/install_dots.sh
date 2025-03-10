@@ -35,7 +35,6 @@ install_dotfiles() {
 
     sudo cp -rf $TARGET_DIR/arch-plasma/dots/etc/sddm/Shades-of-purple-plasma-6 /usr/share/sddm/themes
 
-    sudo mkdir -p /etc/sddm.conf.d
     sudo cp -rf $TARGET_DIR/arch-plasma/dots/etc/sddm/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.conf
 
     chmod +x $HOME/scripts/*
