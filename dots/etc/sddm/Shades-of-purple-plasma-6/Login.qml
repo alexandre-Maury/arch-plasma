@@ -182,7 +182,7 @@ Item {
             // Greeting Label
             Label {
                 id: greetingLabel
-                text: hours < 12 ? "Good Morning" : hours < 18 ? "Good afternoon" : "Good evening"
+                text: hours < 12 ? "Bonjour" : hours < 18 ? "Bon après-midi" : "Bonsoir"
                 color: "#fff"
                 style: softwareRendering ? Text.Outline : Text.Normal
                 styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
