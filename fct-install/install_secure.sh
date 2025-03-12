@@ -388,6 +388,7 @@ install_clam() {
     sudo chown :clamav $HOME/.clamav/quarantine $HOME/.clamav/logs
     sudo chmod 770 $HOME/.clamav/quarantine $HOME/.clamav/logs
     sudo chmod 770 /var/lib/clamav
+    sudo touch /var/log/clamav/freshclam.log
     if [ $? -eq 0 ]; then
         echo "Création des répertoires de quarantaine et des logs - SUCCÈS" | tee -a "$LOG_FILES_INSTALL"
     else

@@ -70,14 +70,14 @@ activate_services() {
     sudo systemctl enable --now clamav-daemon.service
     log_status "Activation de clamav-daemon.service"
 
-    sudo systemctl enable --now sddm.service
-    log_status "Activation de sddm.service"
-
     sudo systemctl enable --now cockpit.socket
     log_status "Activation de cockpit.service"
 
     chsh -s /usr/bin/nu  # To set NuShell as the default SHELL
     chsh -s /usr/bin/zsh # To set Zsh as the default SHELL
+
+    sudo systemctl enable --now sddm.service
+    log_status "Activation de sddm.service"
 
     echo "" | tee -a "$LOG_FILES_INSTALL"
     echo "=== FIN DE L'ACTIVATION DES SERVICES ===" | tee -a "$LOG_FILES_INSTALL"
