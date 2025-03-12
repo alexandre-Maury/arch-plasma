@@ -25,7 +25,7 @@ install_dotfiles() {
     tar -xzvf $TARGET_DIR/arch-plasma/dots/local/share/icons/Shadows-Dark-Icons.tar.gz -C $HOME/.local/share/icons
 
     cp -rf $TARGET_DIR/arch-plasma/dots/local/share/color-schemes/ShadowsDarkColorscheme.colors $HOME/.local/share/color-schemes/ShadowsDarkColorscheme.colors
-    cp -rf $TARGET_DIR/arch-plasma/dots/local/share/Konsole/Shadows-Konsole.colorscheme $HOME/.local/share/Konsole/Shadows-Konsole.colorscheme
+    cp -rf $TARGET_DIR/arch-plasma/dots/local/share/konsole/Shadows-Konsole.colorscheme $HOME/.local/share/konsole/Shadows-Konsole.colorscheme
 
     tar -xzvf $TARGET_DIR/arch-plasma/dots/local/share/plasma/desktoptheme/Shadows-Plasma.tar.gz -C $HOME/.local/share/plasma/desktoptheme
     tar -xzvf $TARGET_DIR/arch-plasma/dots/local/share/plasma/look-and-feel/Shadows-Global.tar.gz -C $HOME/.local/share/plasma/look-and-feel

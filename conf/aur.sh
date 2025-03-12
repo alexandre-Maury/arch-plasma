@@ -80,6 +80,7 @@ PACKAGES_YAY=(
     "python-pipx"
     "power-profiles-daemon"
     "font-manager"
+    "flatpak"
     "spectacle"
     "gwenview"
     "ddcutil"
